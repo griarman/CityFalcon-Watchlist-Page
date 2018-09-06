@@ -40,7 +40,6 @@ export default class Article extends PureComponent{
                 </div>
             </div>
         </div>;
-
         return(
             <div>
                 <div className={'element'}>
@@ -73,23 +72,23 @@ export default class Article extends PureComponent{
         if(difference <= maxSeconds){
             return 'A few seconds ago';
         }
-        else if(difference <= maxMinutes){
+        else if(difference < maxMinutes){
             let min = Math.floor(difference/maxSeconds);
             return min + ' minutes ago.';
         }
-        else if(difference <= maxHours){
+        else if(difference < maxHours){
             let hour = Math.floor(difference/maxMinutes);
             return hour + ' hours ago.';
         }
-        else if(difference <= maxDays){
+        else if(difference < maxDays){
             let day = Math.floor(difference/maxHours);
             return day + ' days ago.';
         }
-        else if(difference <= maxWeeks){
+        else if(difference < maxWeeks){
             let week = Math.floor(difference/maxDays);
             return week + ' weeks ago.';
         }
-        else if(difference <= maxMonths){
+        else if(difference < maxMonths){
             let month = Math.floor(difference/maxWeeks);
             return month + ' months ago.';
         }
